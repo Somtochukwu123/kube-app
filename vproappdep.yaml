@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: vproapp
-          image: somie123/vprofileapp:latest
+          image: tomcat
           ports:
             - name: vproapp-port
               containerPort: 8080
@@ -27,4 +27,4 @@ spec:
           command: ['sh', '-c', 'until nslookup vprodb; do echo waiting for mydb; sleep 2; done;']
         - name: init-memcache
           image: busybox
-          command: [ 'sh', '-c', 'until nslookup vprocache01; do echo waiting for mymc; sleep 2; done;' ]
+          command: ['sh', '-c', 'until nslookup vpromc; do echo waiting for mymc; sleep 2; done;']
